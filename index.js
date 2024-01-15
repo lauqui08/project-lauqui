@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import cors from "cors";
 //database connection
 import dbcon from "./database/dbcon.js";
 //routers
@@ -8,10 +9,12 @@ import truckRoutes from "./routes/truckRoutes.js";
 import supplierRoutes from "./routes/supplierRoutes.js";
 import customerRoutes from "./routes/customerRoutes.js";
 import commodityRoutes from "./routes/commodityRoutes.js";
+import truckingRoutes from "./routes/truckingRoutes.js";
 
 const app = express();
 
 //middlewares
+app.use(cors({ origin: ["http://localhost:5173"], credentials: true }));
 app.use(express.json());
 
 //routes
@@ -20,6 +23,7 @@ app.use("/api/v1/project-lauqui", truckRoutes);
 app.use("/api/v1/project-lauqui", supplierRoutes);
 app.use("/api/v1/project-lauqui", customerRoutes);
 app.use("/api/v1/project-lauqui", commodityRoutes);
+app.use("/api/v1/project-lauqui", truckingRoutes);
 //start server
 const startServer = async () => {
   try {

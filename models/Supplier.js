@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-const SupplierSchema = await mongoose.Schema({
+const SupplierSchema = new mongoose.Schema({
   supplierCode: {
     type: String,
     required: [true, "Supplier code is required!"],
