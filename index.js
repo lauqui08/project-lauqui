@@ -6,6 +6,7 @@ import dbcon from "./database/dbcon.js";
 import driverRoutes from "./routes/driverRoutes.js";
 import truckRoutes from "./routes/truckRoutes.js";
 import supplierRoutes from "./routes/supplierRoutes.js";
+import customerRoutes from "./routes/customerRoutes.js";
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/api/v1/project-lauqui", driverRoutes);
 app.use("/api/v1/project-lauqui", truckRoutes);
 app.use("/api/v1/project-lauqui", supplierRoutes);
+app.use("/api/v1/project-lauqui", customerRoutes);
 //start server
 const startServer = async () => {
   try {
