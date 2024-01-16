@@ -10,6 +10,7 @@ import supplierRoutes from "./routes/supplierRoutes.js";
 import customerRoutes from "./routes/customerRoutes.js";
 import commodityRoutes from "./routes/commodityRoutes.js";
 import truckingRoutes from "./routes/truckingRoutes.js";
+import tankRoutes from "./routes/tankRoutes.js";
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use("/api/v1/project-lauqui", supplierRoutes);
 app.use("/api/v1/project-lauqui", customerRoutes);
 app.use("/api/v1/project-lauqui", commodityRoutes);
 app.use("/api/v1/project-lauqui", truckingRoutes);
+app.use("/api/v1/project-lauqui", tankRoutes);
 //start server
 const startServer = async () => {
   try {
